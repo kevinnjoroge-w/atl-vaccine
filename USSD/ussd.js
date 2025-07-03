@@ -18,139 +18,166 @@ const sessions = {};
 
 // ADDED: Hardcoded personalized messages for each vaccine
 const vaccineMessages = {
-  "BCG": {
-    "3": {
+  BCG: {
+    3: {
       info: "BCG Vaccine Information:\n\n🩹 Protects against tuberculosis (TB)\n💉 Given at birth or within first few months\n⚠️ May cause small scar at injection site\n📅 Your appointment: 3 days from now\n🏥 Visit your nearest health center\n\n⏰ Arrive 30 minutes early\n📋 Bring your ID and birth certificate",
-      reminder: "🔔 BCG Vaccination Reminder\n\nHello! Your BCG vaccination is scheduled for 3 days from now. This vaccine protects against tuberculosis. Please bring your ID and birth certificate. Arrive 30 minutes early at your nearest health center."
+      reminder:
+        "🔔 BCG Vaccination Reminder\n\nHello! Your BCG vaccination is scheduled for 3 days from now. This vaccine protects against tuberculosis. Please bring your ID and birth certificate. Arrive 30 minutes early at your nearest health center.",
     },
-    "7": {
+    7: {
       info: "BCG Vaccine Information:\n\n🩹 Protects against tuberculosis (TB)\n💉 Given at birth or within first few months\n⚠️ May cause small scar at injection site\n📅 Your appointment: 7 days from now\n🏥 Visit your nearest health center\n\n⏰ Arrive 30 minutes early\n📋 Bring your ID and birth certificate",
-      reminder: "🔔 BCG Vaccination Reminder\n\nHello! Your BCG vaccination is scheduled for 7 days from now. This vaccine protects against tuberculosis. Please bring your ID and birth certificate. Arrive 30 minutes early at your nearest health center."
+      reminder:
+        "🔔 BCG Vaccination Reminder\n\nHello! Your BCG vaccination is scheduled for 7 days from now. This vaccine protects against tuberculosis. Please bring your ID and birth certificate. Arrive 30 minutes early at your nearest health center.",
     },
-    "10": {
+    10: {
       info: "BCG Vaccine Information:\n\n🩹 Protects against tuberculosis (TB)\n💉 Given at birth or within first few months\n⚠️ May cause small scar at injection site\n📅 Your appointment: 10 days from now\n🏥 Visit your nearest health center\n\n⏰ Arrive 30 minutes early\n📋 Bring your ID and birth certificate",
-      reminder: "🔔 BCG Vaccination Reminder\n\nHello! Your BCG vaccination is scheduled for 10 days from now. This vaccine protects against tuberculosis. Please bring your ID and birth certificate. Arrive 30 minutes early at your nearest health center."
+      reminder:
+        "🔔 BCG Vaccination Reminder\n\nHello! Your BCG vaccination is scheduled for 10 days from now. This vaccine protects against tuberculosis. Please bring your ID and birth certificate. Arrive 30 minutes early at your nearest health center.",
     },
-    "14": {
+    14: {
       info: "BCG Vaccine Information:\n\n🩹 Protects against tuberculosis (TB)\n💉 Given at birth or within first few months\n⚠️ May cause small scar at injection site\n📅 Your appointment: 14 days from now\n🏥 Visit your nearest health center\n\n⏰ Arrive 30 minutes early\n📋 Bring your ID and birth certificate",
-      reminder: "🔔 BCG Vaccination Reminder\n\nHello! Your BCG vaccination is scheduled for 14 days from now. This vaccine protects against tuberculosis. Please bring your ID and birth certificate. Arrive 30 minutes early at your nearest health center."
-    }
+      reminder:
+        "🔔 BCG Vaccination Reminder\n\nHello! Your BCG vaccination is scheduled for 14 days from now. This vaccine protects against tuberculosis. Please bring your ID and birth certificate. Arrive 30 minutes early at your nearest health center.",
+    },
   },
-  "Polio": {
-    "3": {
+  Polio: {
+    3: {
       info: "Polio Vaccine Information:\n\n🦠 Protects against poliomyelitis\n💧 Given as oral drops or injection\n🔄 Multiple doses needed for full protection\n📅 Your appointment: 3 days from now\n🏥 Visit your nearest health center\n\n⏰ Arrive 30 minutes early\n📋 Bring your vaccination card",
-      reminder: "🔔 Polio Vaccination Reminder\n\nHello! Your Polio vaccination is scheduled for 3 days from now. This vaccine prevents poliomyelitis. Please bring your vaccination card. Arrive 30 minutes early at your nearest health center."
+      reminder:
+        "🔔 Polio Vaccination Reminder\n\nHello! Your Polio vaccination is scheduled for 3 days from now. This vaccine prevents poliomyelitis. Please bring your vaccination card. Arrive 30 minutes early at your nearest health center.",
     },
-    "7": {
+    7: {
       info: "Polio Vaccine Information:\n\n🦠 Protects against poliomyelitis\n💧 Given as oral drops or injection\n🔄 Multiple doses needed for full protection\n📅 Your appointment: 7 days from now\n🏥 Visit your nearest health center\n\n⏰ Arrive 30 minutes early\n📋 Bring your vaccination card",
-      reminder: "🔔 Polio Vaccination Reminder\n\nHello! Your Polio vaccination is scheduled for 7 days from now. This vaccine prevents poliomyelitis. Please bring your vaccination card. Arrive 30 minutes early at your nearest health center."
+      reminder:
+        "🔔 Polio Vaccination Reminder\n\nHello! Your Polio vaccination is scheduled for 7 days from now. This vaccine prevents poliomyelitis. Please bring your vaccination card. Arrive 30 minutes early at your nearest health center.",
     },
-    "10": {
+    10: {
       info: "Polio Vaccine Information:\n\n🦠 Protects against poliomyelitis\n💧 Given as oral drops or injection\n🔄 Multiple doses needed for full protection\n📅 Your appointment: 10 days from now\n🏥 Visit your nearest health center\n\n⏰ Arrive 30 minutes early\n📋 Bring your vaccination card",
-      reminder: "🔔 Polio Vaccination Reminder\n\nHello! Your Polio vaccination is scheduled for 10 days from now. This vaccine prevents poliomyelitis. Please bring your vaccination card. Arrive 30 minutes early at your nearest health center."
+      reminder:
+        "🔔 Polio Vaccination Reminder\n\nHello! Your Polio vaccination is scheduled for 10 days from now. This vaccine prevents poliomyelitis. Please bring your vaccination card. Arrive 30 minutes early at your nearest health center.",
     },
-    "14": {
+    14: {
       info: "Polio Vaccine Information:\n\n🦠 Protects against poliomyelitis\n💧 Given as oral drops or injection\n🔄 Multiple doses needed for full protection\n📅 Your appointment: 14 days from now\n🏥 Visit your nearest health center\n\n⏰ Arrive 30 minutes early\n📋 Bring your vaccination card",
-      reminder: "🔔 Polio Vaccination Reminder\n\nHello! Your Polio vaccination is scheduled for 14 days from now. This vaccine prevents poliomyelitis. Please bring your vaccination card. Arrive 30 minutes early at your nearest health center."
-    }
+      reminder:
+        "🔔 Polio Vaccination Reminder\n\nHello! Your Polio vaccination is scheduled for 14 days from now. This vaccine prevents poliomyelitis. Please bring your vaccination card. Arrive 30 minutes early at your nearest health center.",
+    },
   },
-  "Measles": {
-    "3": {
+  Measles: {
+    3: {
       info: "Measles Vaccine Information:\n\n🔴 Protects against measles, mumps, rubella (MMR)\n💉 Usually given at 9-12 months\n🌡️ May cause mild fever after vaccination\n📅 Your appointment: 3 days from now\n🏥 Visit your nearest health center\n\n⏰ Arrive 30 minutes early\n📋 Bring your child's health card",
-      reminder: "🔔 Measles Vaccination Reminder\n\nHello! Your Measles vaccination is scheduled for 3 days from now. This vaccine protects against measles, mumps, and rubella. Please bring your child's health card. Arrive 30 minutes early at your nearest health center."
+      reminder:
+        "🔔 Measles Vaccination Reminder\n\nHello! Your Measles vaccination is scheduled for 3 days from now. This vaccine protects against measles, mumps, and rubella. Please bring your child's health card. Arrive 30 minutes early at your nearest health center.",
     },
-    "7": {
+    7: {
       info: "Measles Vaccine Information:\n\n🔴 Protects against measles, mumps, rubella (MMR)\n💉 Usually given at 9-12 months\n🌡️ May cause mild fever after vaccination\n📅 Your appointment: 7 days from now\n🏥 Visit your nearest health center\n\n⏰ Arrive 30 minutes early\n📋 Bring your child's health card",
-      reminder: "🔔 Measles Vaccination Reminder\n\nHello! Your Measles vaccination is scheduled for 7 days from now. This vaccine protects against measles, mumps, and rubella. Please bring your child's health card. Arrive 30 minutes early at your nearest health center."
+      reminder:
+        "🔔 Measles Vaccination Reminder\n\nHello! Your Measles vaccination is scheduled for 7 days from now. This vaccine protects against measles, mumps, and rubella. Please bring your child's health card. Arrive 30 minutes early at your nearest health center.",
     },
-    "10": {
+    10: {
       info: "Measles Vaccine Information:\n\n🔴 Protects against measles, mumps, rubella (MMR)\n💉 Usually given at 9-12 months\n🌡️ May cause mild fever after vaccination\n📅 Your appointment: 10 days from now\n🏥 Visit your nearest health center\n\n⏰ Arrive 30 minutes early\n📋 Bring your child's health card",
-      reminder: "🔔 Measles Vaccination Reminder\n\nHello! Your Measles vaccination is scheduled for 10 days from now. This vaccine protects against measles, mumps, and rubella. Please bring your child's health card. Arrive 30 minutes early at your nearest health center."
+      reminder:
+        "🔔 Measles Vaccination Reminder\n\nHello! Your Measles vaccination is scheduled for 10 days from now. This vaccine protects against measles, mumps, and rubella. Please bring your child's health card. Arrive 30 minutes early at your nearest health center.",
     },
-    "14": {
+    14: {
       info: "Measles Vaccine Information:\n\n🔴 Protects against measles, mumps, rubella (MMR)\n💉 Usually given at 9-12 months\n🌡️ May cause mild fever after vaccination\n📅 Your appointment: 14 days from now\n🏥 Visit your nearest health center\n\n⏰ Arrive 30 minutes early\n📋 Bring your child's health card",
-      reminder: "🔔 Measles Vaccination Reminder\n\nHello! Your Measles vaccination is scheduled for 14 days from now. This vaccine protects against measles, mumps, and rubella. Please bring your child's health card. Arrive 30 minutes early at your nearest health center."
-    }
+      reminder:
+        "🔔 Measles Vaccination Reminder\n\nHello! Your Measles vaccination is scheduled for 14 days from now. This vaccine protects against measles, mumps, and rubella. Please bring your child's health card. Arrive 30 minutes early at your nearest health center.",
+    },
   },
-  "Malaria": {
-    "3": {
+  Malaria: {
+    3: {
       info: "Malaria Vaccine Information:\n\n🦟 Protects against malaria (RTS,S/AS01)\n💉 Given in 4 doses starting at 5 months\n🛡️ Provides partial protection against malaria\n📅 Your appointment: 3 days from now\n🏥 Visit your nearest health center\n\n⏰ Arrive 30 minutes early\n📋 Bring your vaccination record",
-      reminder: "🔔 Malaria Vaccination Reminder\n\nHello! Your Malaria vaccination is scheduled for 3 days from now. This vaccine provides protection against malaria. Please bring your vaccination record. Arrive 30 minutes early at your nearest health center."
+      reminder:
+        "🔔 Malaria Vaccination Reminder\n\nHello! Your Malaria vaccination is scheduled for 3 days from now. This vaccine provides protection against malaria. Please bring your vaccination record. Arrive 30 minutes early at your nearest health center.",
     },
-    "7": {
+    7: {
       info: "Malaria Vaccine Information:\n\n🦟 Protects against malaria (RTS,S/AS01)\n💉 Given in 4 doses starting at 5 months\n🛡️ Provides partial protection against malaria\n📅 Your appointment: 7 days from now\n🏥 Visit your nearest health center\n\n⏰ Arrive 30 minutes early\n📋 Bring your vaccination record",
-      reminder: "🔔 Malaria Vaccination Reminder\n\nHello! Your Malaria vaccination is scheduled for 7 days from now. This vaccine provides protection against malaria. Please bring your vaccination record. Arrive 30 minutes early at your nearest health center."
+      reminder:
+        "🔔 Malaria Vaccination Reminder\n\nHello! Your Malaria vaccination is scheduled for 7 days from now. This vaccine provides protection against malaria. Please bring your vaccination record. Arrive 30 minutes early at your nearest health center.",
     },
-    "10": {
+    10: {
       info: "Malaria Vaccine Information:\n\n🦟 Protects against malaria (RTS,S/AS01)\n💉 Given in 4 doses starting at 5 months\n🛡️ Provides partial protection against malaria\n📅 Your appointment: 10 days from now\n🏥 Visit your nearest health center\n\n⏰ Arrive 30 minutes early\n📋 Bring your vaccination record",
-      reminder: "🔔 Malaria Vaccination Reminder\n\nHello! Your Malaria vaccination is scheduled for 10 days from now. This vaccine provides protection against malaria. Please bring your vaccination record. Arrive 30 minutes early at your nearest health center."
+      reminder:
+        "🔔 Malaria Vaccination Reminder\n\nHello! Your Malaria vaccination is scheduled for 10 days from now. This vaccine provides protection against malaria. Please bring your vaccination record. Arrive 30 minutes early at your nearest health center.",
     },
-    "14": {
+    14: {
       info: "Malaria Vaccine Information:\n\n🦟 Protects against malaria (RTS,S/AS01)\n💉 Given in 4 doses starting at 5 months\n🛡️ Provides partial protection against malaria\n📅 Your appointment: 14 days from now\n🏥 Visit your nearest health center\n\n⏰ Arrive 30 minutes early\n📋 Bring your vaccination record",
-      reminder: "🔔 Malaria Vaccination Reminder\n\nHello! Your Malaria vaccination is scheduled for 14 days from now. This vaccine provides protection against malaria. Please bring your vaccination record. Arrive 30 minutes early at your nearest health center."
-    }
+      reminder:
+        "🔔 Malaria Vaccination Reminder\n\nHello! Your Malaria vaccination is scheduled for 14 days from now. This vaccine provides protection against malaria. Please bring your vaccination record. Arrive 30 minutes early at your nearest health center.",
+    },
   },
-  "DPT": {
-    "3": {
+  DPT: {
+    3: {
       info: "DPT Vaccine Information:\n\n🦠 Protects against Diphtheria, Pertussis, Tetanus\n💉 Given in multiple doses (6, 10, 14 weeks)\n🔄 Booster shots needed later\n📅 Your appointment: 3 days from now\n🏥 Visit your nearest health center\n\n⏰ Arrive 30 minutes early\n📋 Bring your immunization card",
-      reminder: "🔔 DPT Vaccination Reminder\n\nHello! Your DPT vaccination is scheduled for 3 days from now. This vaccine protects against Diphtheria, Pertussis, and Tetanus. Please bring your immunization card. Arrive 30 minutes early at your nearest health center."
+      reminder:
+        "🔔 DPT Vaccination Reminder\n\nHello! Your DPT vaccination is scheduled for 3 days from now. This vaccine protects against Diphtheria, Pertussis, and Tetanus. Please bring your immunization card. Arrive 30 minutes early at your nearest health center.",
     },
-    "7": {
+    7: {
       info: "DPT Vaccine Information:\n\n🦠 Protects against Diphtheria, Pertussis, Tetanus\n💉 Given in multiple doses (6, 10, 14 weeks)\n🔄 Booster shots needed later\n📅 Your appointment: 7 days from now\n🏥 Visit your nearest health center\n\n⏰ Arrive 30 minutes early\n📋 Bring your immunization card",
-      reminder: "🔔 DPT Vaccination Reminder\n\nHello! Your DPT vaccination is scheduled for 7 days from now. This vaccine protects against Diphtheria, Pertussis, and Tetanus. Please bring your immunization card. Arrive 30 minutes early at your nearest health center."
+      reminder:
+        "🔔 DPT Vaccination Reminder\n\nHello! Your DPT vaccination is scheduled for 7 days from now. This vaccine protects against Diphtheria, Pertussis, and Tetanus. Please bring your immunization card. Arrive 30 minutes early at your nearest health center.",
     },
-    "10": {
+    10: {
       info: "DPT Vaccine Information:\n\n🦠 Protects against Diphtheria, Pertussis, Tetanus\n💉 Given in multiple doses (6, 10, 14 weeks)\n🔄 Booster shots needed later\n📅 Your appointment: 10 days from now\n🏥 Visit your nearest health center\n\n⏰ Arrive 30 minutes early\n📋 Bring your immunization card",
-      reminder: "🔔 DPT Vaccination Reminder\n\nHello! Your DPT vaccination is scheduled for 10 days from now. This vaccine protects against Diphtheria, Pertussis, and Tetanus. Please bring your immunization card. Arrive 30 minutes early at your nearest health center."
+      reminder:
+        "🔔 DPT Vaccination Reminder\n\nHello! Your DPT vaccination is scheduled for 10 days from now. This vaccine protects against Diphtheria, Pertussis, and Tetanus. Please bring your immunization card. Arrive 30 minutes early at your nearest health center.",
     },
-    "14": {
+    14: {
       info: "DPT Vaccine Information:\n\n🦠 Protects against Diphtheria, Pertussis, Tetanus\n💉 Given in multiple doses (6, 10, 14 weeks)\n🔄 Booster shots needed later\n📅 Your appointment: 14 days from now\n🏥 Visit your nearest health center\n\n⏰ Arrive 30 minutes early\n📋 Bring your immunization card",
-      reminder: "🔔 DPT Vaccination Reminder\n\nHello! Your DPT vaccination is scheduled for 14 days from now. This vaccine protects against Diphtheria, Pertussis, and Tetanus. Please bring your immunization card. Arrive 30 minutes early at your nearest health center."
-    }
+      reminder:
+        "🔔 DPT Vaccination Reminder\n\nHello! Your DPT vaccination is scheduled for 14 days from now. This vaccine protects against Diphtheria, Pertussis, and Tetanus. Please bring your immunization card. Arrive 30 minutes early at your nearest health center.",
+    },
   },
-  "Typhoid": {
-    "3": {
+  Typhoid: {
+    3: {
       info: "Typhoid Vaccine Information:\n\n🦠 Protects against typhoid fever\n💉 Given as injection or oral capsules\n🛡️ Effective for 2-3 years\n📅 Your appointment: 3 days from now\n🏥 Visit your nearest health center\n\n⏰ Arrive 30 minutes early\n📋 Bring your vaccination record",
-      reminder: "🔔 Typhoid Vaccination Reminder\n\nHello! Your Typhoid vaccination is scheduled for 3 days from now. This vaccine protects against typhoid fever. Please bring your vaccination record. Arrive 30 minutes early at your nearest health center."
+      reminder:
+        "🔔 Typhoid Vaccination Reminder\n\nHello! Your Typhoid vaccination is scheduled for 3 days from now. This vaccine protects against typhoid fever. Please bring your vaccination record. Arrive 30 minutes early at your nearest health center.",
     },
-    "7": {
+    7: {
       info: "Typhoid Vaccine Information:\n\n🦠 Protects against typhoid fever\n💉 Given as injection or oral capsules\n🛡️ Effective for 2-3 years\n📅 Your appointment: 7 days from now\n🏥 Visit your nearest health center\n\n⏰ Arrive 30 minutes early\n📋 Bring your vaccination record",
-      reminder: "🔔 Typhoid Vaccination Reminder\n\nHello! Your Typhoid vaccination is scheduled for 7 days from now. This vaccine protects against typhoid fever. Please bring your vaccination record. Arrive 30 minutes early at your nearest health center."
+      reminder:
+        "🔔 Typhoid Vaccination Reminder\n\nHello! Your Typhoid vaccination is scheduled for 7 days from now. This vaccine protects against typhoid fever. Please bring your vaccination record. Arrive 30 minutes early at your nearest health center.",
     },
-    "10": {
+    10: {
       info: "Typhoid Vaccine Information:\n\n🦠 Protects against typhoid fever\n💉 Given as injection or oral capsules\n🛡️ Effective for 2-3 years\n📅 Your appointment: 10 days from now\n🏥 Visit your nearest health center\n\n⏰ Arrive 30 minutes early\n📋 Bring your vaccination record",
-      reminder: "🔔 Typhoid Vaccination Reminder\n\nHello! Your Typhoid vaccination is scheduled for 10 days from now. This vaccine protects against typhoid fever. Please bring your vaccination record. Arrive 30 minutes early at your nearest health center."
+      reminder:
+        "🔔 Typhoid Vaccination Reminder\n\nHello! Your Typhoid vaccination is scheduled for 10 days from now. This vaccine protects against typhoid fever. Please bring your vaccination record. Arrive 30 minutes early at your nearest health center.",
     },
-    "14": {
+    14: {
       info: "Typhoid Vaccine Information:\n\n🦠 Protects against typhoid fever\n💉 Given as injection or oral capsules\n🛡️ Effective for 2-3 years\n📅 Your appointment: 14 days from now\n🏥 Visit your nearest health center\n\n⏰ Arrive 30 minutes early\n📋 Bring your vaccination record",
-      reminder: "🔔 Typhoid Vaccination Reminder\n\nHello! Your Typhoid vaccination is scheduled for 14 days from now. This vaccine protects against typhoid fever. Please bring your vaccination record. Arrive 30 minutes early at your nearest health center."
-    }
-  }
+      reminder:
+        "🔔 Typhoid Vaccination Reminder\n\nHello! Your Typhoid vaccination is scheduled for 14 days from now. This vaccine protects against typhoid fever. Please bring your vaccination record. Arrive 30 minutes early at your nearest health center.",
+    },
+  },
 };
 
 // ADDED: Function to send SMS
 async function sendSMS(phoneNumber, message) {
   try {
-    const response = await axios.post('https://6fc2-41-139-168-163.ngrok-free.app/send-sms', {
-      phoneNumber: phoneNumber,
-      message: message
-    });
-    console.log('SMS sent successfully:', response.data);
+    const response = await axios.post(
+      "https://6fc2-41-139-168-163.ngrok-free.app/send-sms",
+      {
+        phoneNumber: phoneNumber,
+        message: message,
+      }
+    );
+    console.log("SMS sent successfully:", response.data);
     return true;
   } catch (error) {
-    console.error('Error sending SMS:', error.message);
+    console.error("Error sending SMS:", error.message);
     return false;
   }
 }
 
 // ADDED: Function to get personalized message
 function getPersonalizedMessage(vaccine, duration, messageType) {
-  const durationKey = duration.replace(/\D/g, ''); // Extract number from duration
-  
+  const durationKey = duration.replace(/\D/g, ""); // Extract number from duration
+
   if (vaccineMessages[vaccine] && vaccineMessages[vaccine][durationKey]) {
     return vaccineMessages[vaccine][durationKey][messageType];
   }
-  
+
   // Fallback message
   return `Your ${vaccine} vaccination is scheduled for ${duration}. Please visit your nearest health center with your documents.`;
 }
@@ -211,9 +238,14 @@ menu.state("processName", {
     console.log("User: ", name);
 
     menu.session
-      .set("fullName", name.trim())
+      .get()
+      .then((sessionData) => {
+        sessionData = sessionData || {};
+        sessionData.fullName = name.trim();
+        return menu.session.set(sessionData);
+      })
       .then(() => {
-        menu.con("Please enter your phone number:"); // MODIFIED: Changed from county to phone number
+        menu.con("Please enter your phone number:");
       })
       .catch((err) => {
         console.error("Session error:", err);
@@ -232,17 +264,22 @@ menu.state("processPhone", {
     if (!phone || phone.trim() === "") {
       return menu.end("Invalid phone number. Please try again.");
     }
-    
+
     // Basic phone validation
-    const cleanPhone = phone.replace(/[^\d+]/g, '');
+    const cleanPhone = phone.replace(/[^\d+]/g, "");
     if (cleanPhone.length < 10) {
       return menu.end("Please enter a valid phone number.");
     }
-    
+
     console.log("User Phone: ", cleanPhone);
 
     menu.session
-      .set("phoneNumber", cleanPhone)
+      .get()
+      .then((sessionData) => {
+        sessionData = sessionData || {};
+        sessionData.phoneNumber = cleanPhone;
+        return menu.session.set(sessionData);
+      })
       .then(() => {
         menu.con("Please enter your current county:");
       })
@@ -265,7 +302,12 @@ menu.state("processLocation", {
     console.log("User Location: ", location);
 
     menu.session
-      .set("location", location.trim())
+      .get()
+      .then((sessionData) => {
+        sessionData = sessionData || {};
+        sessionData.location = location.trim();
+        return menu.session.set(sessionData);
+      })
       .then(() => {
         menu.con("Please enter your birth certificate number or ID number:");
       })
@@ -288,9 +330,16 @@ menu.state("processId", {
     console.log("User Id: ", id);
 
     menu.session
-      .set("id", id)
+      .get()
+      .then((sessionData) => {
+        sessionData = sessionData || {};
+        sessionData.id = id;
+        return menu.session.set(sessionData);
+      })
       .then(() => {
-        menu.con("Please choose a vaccine:\n\n1. BCG\n2. Polio\n3. Measles\n4. Malaria\n5. DPT\n6. Typhoid"); // FIXED: Added period after 6
+        menu.con(
+          "Please choose a vaccine:\n\n1. BCG\n2. Polio\n3. Measles\n4. Malaria\n5. DPT\n6. Typhoid"
+        );
       })
       .catch((err) => {
         console.error("Session error:", err);
@@ -303,7 +352,7 @@ menu.state("processId", {
     3: "vaccineSelected",
     4: "vaccineSelected",
     5: "vaccineSelected",
-    6: "vaccineSelected"
+    6: "vaccineSelected",
   },
 });
 
@@ -312,26 +361,33 @@ menu.state("vaccineSelected", {
   run: () => {
     const vaccineOption = menu.val;
     const vaccineMap = {
-      "1": "BCG",
-      "2": "Polio",
-      "3": "Measles",
-      "4": "Malaria",
-      "5": "DPT",
-      "6": "Typhoid"
+      1: "BCG",
+      2: "Polio",
+      3: "Measles",
+      4: "Malaria",
+      5: "DPT",
+      6: "Typhoid",
     };
-    
+
     const selectedVaccine = vaccineMap[vaccineOption];
-    
+
     if (!selectedVaccine) {
       return menu.end("Invalid vaccine selection. Please try again.");
     }
-    
+
     console.log("Selected Vaccine: ", selectedVaccine);
 
     menu.session
-      .set("vaccine", selectedVaccine)
+      .get()
+      .then((sessionData) => {
+        sessionData = sessionData || {};
+        sessionData.vaccine = selectedVaccine;
+        return menu.session.set(sessionData);
+      })
       .then(() => {
-        menu.con("Please choose a vaccination period:\n\n1. In 3 days\n2. In 7 days\n3. In 10 days\n4. In 14 days");
+        menu.con(
+          "Please choose a vaccination period:\n\n1. In 3 days\n2. In 7 days\n3. In 10 days\n4. In 14 days"
+        );
       })
       .catch((err) => {
         console.error("Session error:", err);
@@ -342,7 +398,7 @@ menu.state("vaccineSelected", {
     1: "durationSelected",
     2: "durationSelected",
     3: "durationSelected",
-    4: "durationSelected"
+    4: "durationSelected",
   },
 });
 
@@ -351,24 +407,31 @@ menu.state("durationSelected", {
   run: () => {
     const durationOption = menu.val;
     const durationMap = {
-      "1": "In 3 days",
-      "2": "In 7 days",
-      "3": "In 10 days",
-      "4": "In 14 days"
+      1: "In 3 days",
+      2: "In 7 days",
+      3: "In 10 days",
+      4: "In 14 days",
     };
-    
+
     const selectedDuration = durationMap[durationOption];
-    
+
     if (!selectedDuration) {
       return menu.end("Invalid duration selection. Please try again.");
     }
-    
-    console.log("Selected Duration: ", selectedDuration);
 
+    console.log("Selected Duration: ", selectedDuration);
+    
     menu.session
-      .set("duration", selectedDuration)
+      .get()
+      .then((sessionData) => {
+        sessionData = sessionData || {};
+        sessionData.duration = selectedDuration;
+        return menu.session.set(sessionData);
+      })
       .then(() => {
-        menu.con("Would you like to receive an SMS with more information about the vaccine?\n\n1. Yes\n2. No");
+        menu.con(
+          "Would you like to receive an SMS with more information about the vaccine?\n\n1. Yes\n2. No"
+        );
       })
       .catch((err) => {
         console.error("Session error:", err);
@@ -377,7 +440,7 @@ menu.state("durationSelected", {
   },
   next: {
     1: "sendDetailedSMS",
-    2: "sendBasicSMS"
+    2: "sendBasicSMS",
   },
 });
 
@@ -385,32 +448,38 @@ menu.state("durationSelected", {
 menu.state("sendDetailedSMS", {
   run: async () => {
     try {
-      console.log("I am here.....")  
+      console.log("I am here.....");
       const sessionData = await menu.session.get();
-      console.log("I am here at data.....", sessionData) 
+      console.log("I am here at data.....", sessionData);
       const { phoneNumber, vaccine, duration, fullName } = sessionData;
-      
+
       if (!phoneNumber || !vaccine || !duration) {
         return menu.end("Session data missing. Please try again.");
       }
-      
+
       // Get personalized message
-      const message = getPersonalizedMessage(vaccine, duration, 'info');
-      
+      const message = getPersonalizedMessage(vaccine, duration, "info");
+
       // Send SMS
       const smsSent = await sendSMS(phoneNumber, message);
-      
+
       if (smsSent) {
-        console.log(`Detailed SMS sent to ${phoneNumber} for ${vaccine} vaccine`);
-        menu.end(`Thank you ${fullName}! You will receive a detailed SMS shortly with your ${vaccine} vaccination information and appointment details.`);
+        console.log(
+          `Detailed SMS sent to ${phoneNumber} for ${vaccine} vaccine`
+        );
+        menu.end(
+          `Thank you ${fullName}! You will receive a detailed SMS shortly with your ${vaccine} vaccination information and appointment details.`
+        );
       } else {
-        menu.end("Registration successful, but SMS could not be sent. Please contact the health center directly.");
+        menu.end(
+          "Registration successful, but SMS could not be sent. Please contact the health center directly."
+        );
       }
     } catch (error) {
       console.error("Error in sendDetailedSMS:", error);
       menu.end("System error. Please try again.");
     }
-  }
+  },
 });
 
 // MODIFIED: Send basic SMS with reminder only
@@ -419,35 +488,39 @@ menu.state("sendBasicSMS", {
     try {
       const sessionData = await menu.session.get();
       const { phoneNumber, vaccine, duration, fullName } = sessionData;
-      
+
       if (!phoneNumber || !vaccine || !duration) {
         return menu.end("Session data missing. Please try again.");
       }
-      
+
       // Get personalized reminder message
-      const message = getPersonalizedMessage(vaccine, duration, 'reminder');
-      
+      const message = getPersonalizedMessage(vaccine, duration, "reminder");
+
       // Send SMS
       const smsSent = await sendSMS(phoneNumber, message);
-      
+
       if (smsSent) {
         console.log(`Basic SMS sent to ${phoneNumber} for ${vaccine} vaccine`);
-        menu.end(`Thank you ${fullName}! You will receive an SMS reminder shortly with your ${vaccine} vaccination date. Thank you for using Chanjo!`);
+        menu.end(
+          `Thank you ${fullName}! You will receive an SMS reminder shortly with your ${vaccine} vaccination date. Thank you for using Chanjo!`
+        );
       } else {
-        menu.end("Registration successful, but SMS could not be sent. Please contact the health center directly.");
+        menu.end(
+          "Registration successful, but SMS could not be sent. Please contact the health center directly."
+        );
       }
     } catch (error) {
       console.error("Error in sendBasicSMS:", error);
       menu.end("System error. Please try again.");
     }
-  }
+  },
 });
 
 // ADDED: Exit state
 menu.state("exit", {
   run: () => {
     menu.end("Thank you for using Chanjo. Stay healthy!");
-  }
+  },
 });
 
 // USSD Endpoint

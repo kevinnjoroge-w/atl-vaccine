@@ -17,10 +17,31 @@ const africastalking = AfricasTalking(credentials);
 // Get the SMS service
 const sms = africastalking.SMS;
 
+function formatPhoneNumber(phone) {
+  // Remove all non-digit characters
+  let cleaned = phone.replace(/\D/g, '');
+  
+  // Handle Kenyan numbers: 07... or 7... becomes +254...
+  if (cleaned.startsWith('0') && cleaned.length === 10) {
+    return '+254' + cleaned.substring(1);
+  } 
+  else if (cleaned.startsWith('7') && cleaned.length === 9) {
+    return '+254' + cleaned;
+  }
+  // Handle 254... format
+  else if (cleaned.startsWith('254') && cleaned.length === 12) {
+    return '+' + cleaned;
+  }
+  // Return as is if already in +254 format
+  return cleaned.startsWith('+') ? cleaned : '+' + cleaned;
+}
+
 const sendMessage = async (phoneNumber, message) => {
     try {
+        const formattedPhone = formatPhoneNumber(phoneNumber);
+
         const options = {
-            to: [phoneNumber], // Array of recipients
+            to: [formattedPhone], // Array of recipients
             message: message,
             // from: '13017' // Optional sender ID
         };

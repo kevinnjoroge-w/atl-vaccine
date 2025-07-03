@@ -1,0 +1,15 @@
+{
+  "name": "sms",
+  "version": "1.0.0",
+  "main": "sms.server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon SMS/sms.server.js"
+  },
+  "dependencies": {
+    "africastalking": "^0.7.3",
+    "dotenv": "^17.0.1",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
